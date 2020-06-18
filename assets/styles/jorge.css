@@ -14,7 +14,7 @@ body {
 }
 
 .wrapper {
-    width: 116rem;
+    width: 115rem;
     padding: 2rem;
 }
 
@@ -35,7 +35,7 @@ body {
 border-radius: 0.8rem;
 }
 .card__content {
-    font-size: 1.8rem;
+    font-size: 1.6rem;
     line-height: 2.2rem;
 }
 .card__bottom {
