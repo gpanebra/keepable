@@ -1,0 +1,32 @@
+header {
+  min-height: 8vh;
+  width: 100%;
+}
+.index-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.nav-header {
+  width: 18vw;
+  min-width: 120px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.header-message {
+  width: 82vw;
+  padding-left: 20px;
+}
+.header-logo img {
+  width: 100%;
+}
+.header-message div {
+  width: 100%;
+}
+.header-message span {
+  color: #ffffff;
+}
+.header-message span:first-child {
+  font-weight: bold;
+}
