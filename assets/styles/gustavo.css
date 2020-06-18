@@ -1,0 +1,41 @@
+header {
+  height: 70px;
+  border-bottom: 2px solid #d1d1d1;
+}
+
+.main {
+  height: auto;
+  overflow: hidden;
+}
+
+.sidebar {
+  width: 18vw;
+  min-width: 120px;
+  border-right: 2px solid #d1d1d1;
+  height: 90vh;
+  display: flex;
+  flex-direction: column;
+  padding-top: 5px;
+}
+.sidebar-text {
+  text-decoration: none;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 20px;
+  color: white;
+  
+  padding: 10px;
+}
+.sidebar-text-wrapper {
+  display: flex;
+  align-items: center;
+}
+.sidebar-bracket {
+  margin-left: 3px;
+  margin-right: 20px;
+}
+.sidebar-notes{
+    background-color: #999B9E;
+    border-radius: 0px 50px 50px 0px; 
+}
