@@ -1,0 +1,15 @@
+header {
+  height: 70px;
+  border-bottom: 2px solid #d1d1d1;
+}
+
+.main {
+  height: auto;  
+  overflow: hidden;
+}
+
+.sidebar {
+  width: 280px;
+  border-right: 2px solid #d1d1d1;
+  height: 90vh;
+}
