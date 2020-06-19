@@ -30,3 +30,55 @@ header {
 .header-message span:first-child {
   font-weight: bold;
 }
+
+/* FORM NOTES */
+.notes-wrapper {
+  width: 82vw;
+  display: flex;
+  justify-content: center;
+}
+.form-notes {
+  background: #ffffff;
+  height: fit-content;
+  min-height: 150px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 14px;
+  margin-top: 30px;
+  max-width: 600px;
+  width: 40%;
+  box-shadow: 5px 5px 15px rgba(153, 155, 158, 0.85);
+  border-radius: 8px;
+}
+.form-notes textarea {
+  border: none;
+  font-size: 18px;
+  line-height: 24px;
+  letter-spacing: 0.25px;
+}
+.form-buttons {
+  display: flex;
+  justify-content: space-between;
+}
+.pallette-button,
+.keep-button {
+  background: #ffffff;
+  border: none;
+  fill: #999b9e;
+}
+.pallette-button {
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+}
+.keep-button {
+  font-size: 15px;
+  line-height: 24px;
+  letter-spacing: 0.25px;
+  color: #000000;
+}

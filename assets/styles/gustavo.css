@@ -5,7 +5,7 @@ header {
 
 .main {
   height: auto;
-  overflow: hidden;
+  display: flex;
 }
 
 .sidebar {
@@ -24,7 +24,7 @@ header {
   font-size: 18px;
   line-height: 20px;
   color: white;
-  
+
   padding: 10px;
 }
 .sidebar-text-wrapper {
@@ -35,7 +35,7 @@ header {
   margin-left: 3px;
   margin-right: 20px;
 }
-.sidebar-notes{
-    background-color: #999B9E;
-    border-radius: 0px 50px 50px 0px; 
+.sidebar-notes {
+  background-color: #999b9e;
+  border-radius: 0px 50px 50px 0px;
 }
