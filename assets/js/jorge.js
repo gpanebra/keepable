@@ -1,10 +1,12 @@
+// delegations
+document.querySelector("body").addEventListener("click", pallete);
+
+
+
+
 const createButton = document.querySelector(".keep-button");
 createButton.addEventListener("click", createCardHtml);
 let others = document.querySelector(".others");
-const pallette_buttons = document.querySelectorAll(".pallette-button");
-pallette_buttons.forEach((element) =>
-  element.addEventListener("click", pallete)
-);
 const trash_buttons = document.querySelectorAll(".pallette-button");
 trash_buttons.forEach((element) =>
   element.addEventListener("click", deleteCard)
@@ -59,25 +61,30 @@ function appendNoteToOthers(element, content) {
   content.value = "";
   messageWaiting();
 }
-function pallete() {
-  let currentcard = this.parentNode.parentNode;
-  let pallete = currentcard.querySelector(".pallete-colors");
-  if (pallete) {
-    pallete.remove();
-  } else {
-    addPalleteHtml(currentcard);
+function pallete(e) {
+    e.stopPropagation()
+  if (e.target.parentNode.classList.contains("pallette-button")){
+    let currentcard = e.target.parentNode;
+    currentcard.append(addPalleteHtml());
   }
+  else { addPalleteHtml().remove() }
+
 }
-function addPalleteHtml(currentcard) {
-  const pallet = document.createElement("div");
-  pallet.classList.add("pallete-colors");
-  for (let i = 1; i <= 10; i++) {
-    const color = document.createElement("div");
-    color.classList.add("color", "color-" + i);
-    pallet.append(color);
-  }
-  currentcard.append(pallet);
+const addPalleteHtml = ()=>{
+    if (this.pallet) return this.pallet;
+    else {
+        this.pallet = document.createElement("div");
+        this.pallet.classList.add("pallete-colors");
+        for (let i = 1; i <= 10; i++) {
+          const color = document.createElement("div");
+          color.classList.add("color", "color-" + i);
+          this.pallet.append(color);
+        }
+        this.pallete.addEventListener("click", addColor);
+        return this.pallet
+    }
 }
+
 
 function messageWaiting() {
   if (others.childElementCount == 0) {
@@ -100,9 +107,7 @@ function messageWaiting() {
 }
 function deleteCard() {
   let currentcard = this.parentNode.parentNode;
-  console.log(currentcard);
   let content = currentcard.querySelector(".card__content").textContent;
-  console.log(content);
   let deleted_card = {
     card_id: currentcard.id,
     content: content,
