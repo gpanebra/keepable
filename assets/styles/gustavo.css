@@ -6,6 +6,8 @@ header {
 .main {
   height: auto;
   overflow: hidden;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .sidebar {
