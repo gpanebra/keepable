@@ -15,6 +15,7 @@ body * {
   visibility: visible;
 }
 .hide {
-  display: none;
+  height: none;
+  overflow: hidden;
   visibility: hidden;
 }

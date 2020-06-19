@@ -25,18 +25,28 @@ header {
   font-size: 18px;
   line-height: 20px;
   color: white;
-
+  border: none;
+  background: transparent;
   padding: 10px;
 }
 .sidebar-text-wrapper {
   display: flex;
   align-items: center;
 }
+.sidebar-text-wrapper svg {
+  fill: white;
+}
 .sidebar-bracket {
   margin-left: 3px;
   margin-right: 20px;
 }
-.sidebar-notes {
+.marked {
   background-color: #999b9e;
+  border-radius: 0px 50px 50px 0px;
+  color: white;
+}
+
+.unmarked {
+  background-color: transparent;
   border-radius: 0px 50px 50px 0px;
 }

@@ -1,7 +1,7 @@
 header {
   min-height: 8vh;
   width: 100%;
-  font-size: 15px;
+  font-size: 18px;
 }
 .index-header {
   display: flex;
@@ -36,6 +36,7 @@ header {
 .wrapper {
   width: 82vw;
   display: flex;
+  align-items: flex-start;
   flex-wrap: wrap;
   justify-content: center;
 }
@@ -66,12 +67,14 @@ header {
   justify-content: space-between;
 }
 .pallette-button,
-.keep-button {
+.keep-button,
+.trash-button {
   background: rgba(255, 255, 255, 0.5);
   border: none;
   fill: #999b9e;
 }
-.pallette-button {
+.pallette-button,
+.trash-button {
   border-radius: 50%;
   width: 30px;
   height: 30px;
@@ -88,12 +91,24 @@ header {
   color: #000000;
   cursor: pointer;
 }
+.message-waiting {
+  position: sticky;
+  color: #ffffff;
+  width: 80%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: 40px;
+}
+
 @media (max-width: 768px) {
   .index-header {
     flex-wrap: wrap;
     padding: 10px;
   }
   .header-message {
+    text-align: center;
     position: absolute;
     top: 70px;
     margin: 20px 0;
