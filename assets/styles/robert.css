@@ -1,6 +1,7 @@
 header {
   min-height: 8vh;
   width: 100%;
+  font-size: 15px;
 }
 .index-header {
   display: flex;
@@ -32,15 +33,18 @@ header {
 }
 
 /* FORM NOTES */
-.notes-wrapper {
+.wrapper {
   width: 82vw;
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
 }
 .form-notes {
+  position: relative;
   background: #ffffff;
   height: fit-content;
   min-height: 150px;
+  min-width: 260px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -63,7 +67,7 @@ header {
 }
 .pallette-button,
 .keep-button {
-  background: #ffffff;
+  background: rgba(255, 255, 255, 0.5);
   border: none;
   fill: #999b9e;
 }
@@ -75,10 +79,23 @@ header {
   justify-content: center;
   align-items: center;
   padding: 0;
+  cursor: pointer;
 }
 .keep-button {
   font-size: 15px;
   line-height: 24px;
   letter-spacing: 0.25px;
   color: #000000;
+  cursor: pointer;
+}
+@media (max-width: 768px) {
+  .index-header {
+    flex-wrap: wrap;
+    padding: 10px;
+  }
+  .header-message {
+    position: absolute;
+    top: 70px;
+    margin: 20px 0;
+  }
 }
