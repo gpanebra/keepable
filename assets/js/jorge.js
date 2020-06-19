@@ -104,7 +104,7 @@ function changeColor(e) {
 }
 
 function messageWaiting() {
-  if (others.childElementCount == 0) {
+  if (others.innerHTML == "") {
     let messageContainer = document.createElement("div");
     messageContainer.className = "message-waiting";
     messageContainer.innerHTML = `
@@ -113,30 +113,39 @@ function messageWaiting() {
                 <img src = "assets/images/}.svg" alt = "" >
         `;
     wrapper.append(messageContainer);
-    others.style.display = "none";
   } else {
     others.style.display = "grid";
     let message = wrapper.querySelector(".message-waiting");
-    if (message) {
-      message.remove();
-    }
+    message.remove();
   }
 }
+
 function deleteCard() {
   let currentcard = this.parentNode.parentNode;
+  console.log(currentcard);
+  currentcard.querySelector(".card__bottom").innerHTML = "";
+  currentcard.querySelector(
+    ".card__bottom"
+  ).innerHTML = ` <button class="remove-button">
+  <img src="assets/images/trash-grey.svg" alt="">
+</button>
+<button class="recover-button">
+<img src="assets/images/arrow_up.svg" alt="">
+</button>`;
+  /* 
   let content = currentcard.querySelector(".card__content").textContent;
 
   console.log(content);
-  /*let deleted_card = {
+  let deleted_card = {
     card_id: currentcard.id,
     content: content,
     color: currentcard.classList["1"],
   };*/
+
   let index = cards_todo.indexOf(currentcard);
   cards_todo.splice(index, 1);
   cards_trashed.push(currentcard);
-  currentcard.remove();
-  return messageWaiting();
+  currentcard.remove();  
 }
 
 function showtrash() {
@@ -144,6 +153,8 @@ function showtrash() {
   document.querySelector(".others").innerHTML = "";
   cards_trashed.forEach((e) => {
     others.prepend(e);
+    e.querySelector(".remove-button").addEventListener("click", removeCard);
+    e.querySelector(".recover-button").addEventListener("click", recoverCard);
   });
 }
 
@@ -155,12 +166,44 @@ function shownotes() {
   });
 }
 
+function recoverCard() {
+  let currentDeletedCard = this.parentNode.parentNode;
+  let index = cards_trashed.indexOf(currentDeletedCard);
+  cards_trashed.splice(index, 1);
+  currentDeletedCard.querySelector(".card__bottom").innerHTML = "";
+  currentDeletedCard.querySelector(
+    ".card__bottom"
+  ).innerHTML = ` <button class="pallette-button">
+  <img src="assets/images/pallette.svg" alt="">
+</button>
+<button class="trash-button">
+<img src="assets/images/trash-grey.svg" alt="">
+</button>`;
+  currentDeletedCard
+    .querySelector(".pallette-button")
+    .addEventListener("click", pallete);
+  currentDeletedCard
+    .querySelector(".trash-button")
+    .addEventListener("click", deleteCard);
+  cards_todo.push(currentDeletedCard);
+  others.prepend(currentDeletedCard);
+  currentDeletedCard.remove();
+  
+}
+function removeCard() {
+  let currentDeletedCard = this.parentNode.parentNode;
+  let index = cards_trashed.indexOf(currentDeletedCard);
+  cards_trashed.splice(index, 1);
+  currentDeletedCard.remove();
+}
+
 function navigation() {
   let classes = Array.from(this.classList);
   let lastClass = classes.pop();
   if (lastClass == "sidebar-notes") {
     document.querySelector(".sidebar-notes").classList.add("marked");
     document.querySelector(".sidebar-trash").classList.remove("marked");
+
     return shownotes(); //TODO
   } else {
     document.querySelector(".sidebar-trash").classList.add("marked");

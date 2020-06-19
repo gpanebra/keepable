@@ -3,9 +3,8 @@ header {
   border-bottom: 2px solid #d1d1d1;
 }
 
-.main {
-  height: auto;
-  display: flex;
+.main {  
+  display: flex;  
 }
 
 .sidebar {
@@ -19,6 +18,7 @@ header {
 .wrapper {
   border-left: 2px solid #d1d1d1;
   height: 100%;
+  
 }
 
 .sidebar-text {
