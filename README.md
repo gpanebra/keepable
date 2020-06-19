@@ -1,5 +1,10 @@
 # Keepable ✏️
 
+Members:
+-Robert Medina
+-Jorge Gonzales
+-Gustavo Panebra
+
 Keepable is a take-nothing service and productivity app designed by Codeable
 students in which users can post amazing notes.
 
