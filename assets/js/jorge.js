@@ -1,6 +1,7 @@
 const createButton = document.querySelector(".keep-button");
 createButton.addEventListener("click", createCardHtml);
 let others = document.querySelector(".others");
+let deleted_others = document.querySelector(".deleted-others");
 const pallette_buttons = document.querySelectorAll(".pallette-button");
 pallette_buttons.forEach((element) =>
   element.addEventListener("click", pallete)
@@ -19,6 +20,7 @@ messageWaiting();
 
 const cards_todo = [];
 const cards_trashed = [];
+
 function createCardHtml() {
   let color = "color-1";
   let content = document.querySelector("#body-note");
@@ -37,19 +39,19 @@ function createCardHtml() {
             <img src="assets/images/pallette.svg" alt="">
         </button>
         <button class="trash-button">
-        <img src="assets/images/trash.svg" alt="">
+        <img src="assets/images/trash-grey.svg" alt="">
     </button>
     </div>
     `;
   card.querySelector(".pallette-button").addEventListener("click", pallete);
   card.querySelector(".trash-button").addEventListener("click", deleteCard);
 
-  let card_created = {
+  /*let card_created = {
     card_id: card.id,
     content: content.value.trim(),
     color: color,
-  };
-  cards_todo.push(card_created);
+  };*/
+  cards_todo.push(card);
 
   return appendNoteToOthers(card, content);
 }
@@ -103,16 +105,32 @@ function deleteCard() {
   console.log(currentcard);
   let content = currentcard.querySelector(".card__content").textContent;
   console.log(content);
-  let deleted_card = {
+  /*let deleted_card = {
     card_id: currentcard.id,
     content: content,
     color: currentcard.classList["1"],
-  };
-  let index = cards_todo.indexOf(currentcard.id);
+  };*/
+  let index = cards_todo.indexOf(currentcard);
   cards_todo.splice(index, 1);
-  cards_trashed.push(deleted_card);
+  cards_trashed.push(currentcard);
   currentcard.remove();
   return messageWaiting();
+}
+
+function showtrash() {
+  document.querySelector(".form-notes").style.display = "none";
+  document.querySelector(".others").innerHTML = "";
+  cards_trashed.forEach((e) => {
+    others.prepend(e);
+  });
+}
+
+function shownotes() {
+  document.querySelector(".form-notes").style.display = "flex";
+  document.querySelector(".others").innerHTML = "";
+  cards_todo.forEach((e) => {
+    others.prepend(e);
+  });
 }
 
 function navigation() {
