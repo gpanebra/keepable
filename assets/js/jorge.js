@@ -1,4 +1,5 @@
 // delegations
+//document.querySelector(".wrapper").addEventListener("click", addColor)
 document.querySelector("body").addEventListener("click", pallete);
 
 
@@ -15,14 +16,14 @@ let notes_nav = document.querySelector(".sidebar-notes");
 let trash_nav = document.querySelector(".sidebar-trash");
 notes_nav.addEventListener("click", navigation);
 trash_nav.addEventListener("click", navigation);
-
+const form = document.querySelector(".form-notes");
 let wrapper = document.querySelector(".wrapper");
 messageWaiting();
 
 const cards_todo = [];
 const cards_trashed = [];
 function createCardHtml() {
-  let color = "color-1";
+  let color = form.classList.item(1);
   let content = document.querySelector("#body-note");
   if (content.value.trim().length < 2) {
     return alert("The note will be at least 2 words of length");
@@ -61,8 +62,9 @@ function appendNoteToOthers(element, content) {
   content.value = "";
   messageWaiting();
 }
+
 function pallete(e) {
-    e.stopPropagation()
+  e.stopPropagation()
   if (e.target.parentNode.classList.contains("pallette-button")){
     let currentcard = e.target.parentNode;
     currentcard.append(addPalleteHtml());
@@ -77,14 +79,22 @@ const addPalleteHtml = ()=>{
         this.pallet.classList.add("pallete-colors");
         for (let i = 1; i <= 10; i++) {
           const color = document.createElement("div");
+          color.dataset.color = i;
           color.classList.add("color", "color-" + i);
           this.pallet.append(color);
         }
-        this.pallete.addEventListener("click", addColor);
+        this.pallet.addEventListener("click", changeColor);
         return this.pallet
     }
 }
 
+function changeColor(e) {
+    const classesColor = ["color-1","color-2","color-3","color-4","color-5","color-6","color-7","color-8","color-9","color-10"]
+    const currentcard = e.target.parentNode.parentNode.parentNode.parentNode;
+    const color = e.target.classList.item(1);
+    currentcard.classList.remove(...classesColor);
+    currentcard.classList.add(color)
+}
 
 function messageWaiting() {
   if (others.childElementCount == 0) {
