@@ -3,40 +3,83 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="shortcut icon"
+      href="/assets/images/curly-braces.svg"
+      type="image/x-icon"
+    />
     <link rel="stylesheet" href="/assets/styles/main.css" />
     <link rel="stylesheet" href="/assets/styles/gustavo.css" />
-    <link rel="stylesheet" href="assets/styles/jorge.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <title>Keepable</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
+      rel="stylesheet"
+    />
     <script
       src="https://kit.fontawesome.com/3ce83e985d.js"
       crossorigin="anonymous"
     ></script>
-    <title>Keepable</title>
+    <link rel="stylesheet" href="assets/styles/jorge.css" />
   </head>
   <body>
-    <header></header>
+    <header class="index-header">
+      <div class="nav-header">
+        <div class="header-logo">
+          <img src="/assets/images/logo.svg" alt="Keepable" />
+        </div>
+      </div>
+      <div class="header-message">
+        <div>
+          <span>Welcome to {keepable}.</span>
+          <span class="message-weather"></span>
+        </div>
+      </div>
+    </header>
+
     <div class="main">
       <div class="sidebar">
-        <a href="" class="sidebar-text sidebar-notes"
-          ><div class="sidebar-text-wrapper sidebar-bracket">
+        <button  class="sidebar-text sidebar-notes marked"
+          ><div class="sidebar-text-wrapper ">
             <img
               src="assets/images/curly-braces.svg"
               alt="{"
               class="sidebar-bracket"
             />
             <span>Notes</span>
-          </div></a
+          </div></button
         >
-        <a href="" class="sidebar-text sidebar-trashcan"
+        <button  class="sidebar-text sidebar-trash"
           ><div class="sidebar-text-wrapper sidebar-trash">
             <img
               src="assets/images/trash.svg"
               alt="trash"
-              class="sidebar-bracket"
+              class="sidebar-trashcan"
             /><span>Trash</span>
-          </div></a
+          </div></button
         >
       </div>
       <div class="wrapper">
+        <section action="" class="form-notes">
+          <textarea
+            name=""
+            id="body-note"
+            cols="30"
+            rows="5"
+            placeholder="Some great think!"
+          ></textarea>
+          <div class="form-buttons">
+            <button class="pallette-button">
+              <img src="assets/images/pallette.svg" alt="" />
+            </button>
+            <button type="submit" class="keep-button" >
+              Keep it!
+            </button>
+          </section>
+        </form>
         <div class="others">
           <div class="card color-1">
             <p class="card__content">
@@ -119,6 +162,7 @@
         </div>
       </div>
     </div>
+    <script src="assets/js/geolocation.js"></script>
     <script src="assets/js/jorge.js"></script>
   </body>
 </html>

@@ -5,20 +5,22 @@ header {
 
 .main {
   height: auto;
-  overflow: hidden;
   display: flex;
-  flex-wrap: wrap;
 }
 
 .sidebar {
   width: 18vw;
   min-width: 120px;
-  border-right: 2px solid #d1d1d1;
-  height: 90vh;
   display: flex;
+  flex-wrap: wrap;
   flex-direction: column;
   padding-top: 5px;
 }
+.wrapper {
+  border-left: 2px solid #d1d1d1;
+  height: 100%;
+}
+
 .sidebar-text {
   text-decoration: none;
   font-style: normal;
@@ -26,21 +28,32 @@ header {
   font-size: 18px;
   line-height: 20px;
   color: white;
-
+  border: none;
+  background: transparent;
   padding: 10px;
 }
 .sidebar-text-wrapper {
   display: flex;
   align-items: center;
 }
+.sidebar-text-wrapper svg {
+  fill: white;
+}
 .sidebar-bracket {
-  margin-left: 3px;
+  margin-left: 6px;
   margin-right: 20px;
 }
-.sidebar-notes {
+.sidebar-trashcan {
+    margin-left: 3px;
+    margin-right: 20px;
+  }
+.marked {
   background-color: #999b9e;
   border-radius: 0px 50px 50px 0px;
+  color: white;
 }
-.sidebar-trashcan {  
+
+.unmarked {
+  background-color: transparent;
   border-radius: 0px 50px 50px 0px;
 }
