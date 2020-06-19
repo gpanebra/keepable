@@ -1,12 +1,9 @@
 // delegations
 //document.querySelector(".wrapper").addEventListener("click", addColor)
 document.querySelector("body").addEventListener("click", pallete);
+document.querySelector(".keep-button").addEventListener("click", createCardHtml);
 
 
-
-
-const createButton = document.querySelector(".keep-button");
-createButton.addEventListener("click", createCardHtml);
 let others = document.querySelector(".others");
 
 let deleted_others = document.querySelector(".deleted-others");
@@ -32,6 +29,7 @@ const cards_trashed = [];
 function createCardHtml() {
   let color = form.classList.item(1);
   let content = document.querySelector("#body-note");
+  const title = form.children[0];
   if (content.value.trim().length < 2) {
     return alert("The note will be at least 2 words of length");
   }
@@ -40,9 +38,9 @@ function createCardHtml() {
   card.className = `card ${color}`;
   card.id = `card-${cards_todo.length + 1}`;
   card.innerHTML = `
+    <p class="card__title">${title.value}</p>
     <p class="card__content">${content.value.trim()}</p>
     <div class="card__bottom">
-
         <button class="pallette-button">
             <img src="assets/images/pallette.svg" alt="">
         </button>
@@ -54,19 +52,15 @@ function createCardHtml() {
   card.querySelector(".pallette-button").addEventListener("click", pallete);
   card.querySelector(".trash-button").addEventListener("click", deleteCard);
 
-  /*let card_created = {
-    card_id: card.id,
-    content: content.value.trim(),
-    color: color,
-  };*/
   cards_todo.push(card);
 
-  return appendNoteToOthers(card, content);
+  return appendNoteToOthers(card, content,title);
 }
 
-function appendNoteToOthers(element, content) {
+function appendNoteToOthers(element, content,title) {
   others.prepend(element);
   content.value = "";
+  title.value = "";
   messageWaiting();
 }
 
