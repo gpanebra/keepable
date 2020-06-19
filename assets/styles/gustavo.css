@@ -9,11 +9,12 @@ header {
 }
 
 .sidebar {
-  width: 18vw;
+  width: 200px;
   min-width: 120px;
   border-right: 2px solid #d1d1d1;
   height: 90vh;
   display: flex;
+  flex-wrap: wrap;
   flex-direction: column;
   padding-top: 5px;
 }
