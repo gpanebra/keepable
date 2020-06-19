@@ -68,13 +68,13 @@ header {
 }
 .pallette-button,
 .keep-button,
-.trash-button {
+.trash-button,.recover-button, .remove-button {
   background: rgba(255, 255, 255, 0.5);
   border: none;
   fill: #999b9e;
 }
 .pallette-button,
-.trash-button {
+.trash-button,.recover-button, .remove-button {
   border-radius: 50%;
   width: 30px;
   height: 30px;
