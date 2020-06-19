@@ -1,0 +1,116 @@
+header {
+  min-height: 8vh;
+  width: 100%;
+  font-size: 18px;
+}
+.index-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.nav-header {
+  width: 18vw;
+  min-width: 120px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.header-message {
+  width: 82vw;
+  padding-left: 20px;
+}
+.header-logo img {
+  width: 100%;
+}
+.header-message div {
+  width: 100%;
+}
+.header-message span {
+  color: #ffffff;
+}
+.header-message span:first-child {
+  font-weight: bold;
+}
+
+/* FORM NOTES */
+.wrapper {
+  width: 82vw;
+  display: flex;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.form-notes {
+  position: relative;
+  background: #ffffff;
+  height: fit-content;
+  min-height: 150px;
+  min-width: 260px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 14px;
+  margin-top: 30px;
+  max-width: 600px;
+  width: 40%;
+  box-shadow: 5px 5px 15px rgba(153, 155, 158, 0.85);
+  border-radius: 8px;
+}
+.form-notes textarea {
+  border: none;
+  font-size: 18px;
+  line-height: 24px;
+  letter-spacing: 0.25px;
+}
+.form-buttons {
+  display: flex;
+  justify-content: space-between;
+}
+.pallette-button,
+.keep-button,
+.trash-button {
+  background: rgba(255, 255, 255, 0.5);
+  border: none;
+  fill: #999b9e;
+}
+.pallette-button,
+.trash-button {
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  cursor: pointer;
+}
+.keep-button {
+  font-size: 15px;
+  line-height: 24px;
+  letter-spacing: 0.25px;
+  color: #000000;
+  cursor: pointer;
+}
+.message-waiting {
+  position: sticky;
+  color: #ffffff;
+  width: 80%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: 40px;
+}
+
+@media (max-width: 768px) {
+  .index-header {
+    flex-wrap: wrap;
+    padding: 10px;
+  }
+  .header-message {
+    text-align: center;
+    position: absolute;
+    top: 70px;
+    margin: 20px 0;
+  }
+}
